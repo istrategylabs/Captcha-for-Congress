@@ -2,7 +2,7 @@
 
 Hey! Thanks for showing up for reproductive rights. If you're here, you must want to put Captcha for Congress on your site, and this guide is here to help you do that!
 
-<small>(**Disclaimer**: Actual captchas, intended to prevent spambots from submitting forms, take a lot of work to create and maintain. **Don't** use this in place of an actual captcha. **Do** use this to show your support for reproductive health.)</small>
+###### (Disclaimer: Actual captchas, intended to prevent spambots from submitting forms, take a lot of work to create and maintain. _Don't_ use this in place of an actual captcha. _Do_ use this to show your support for reproductive health.)
 
 ## Installing
 
