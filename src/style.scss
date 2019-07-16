@@ -1,11 +1,11 @@
-@import url("https://use.typekit.net/mdz3mgw.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
 $blue: #0e2ce4;
 $blue_hover: darken($blue, 20%);
 $red: rgb(239, 13, 0);
 
-@mixin poppins {
-  font-family: poppins, Helvetica, Arial, sans-serif;
+@mixin roboto {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1.15;
 }
 
@@ -32,7 +32,7 @@ $red: rgb(239, 13, 0);
 .C4C__modal {
   background: $blue;
   box-shadow: 0 0 0 6px $blue;
-  @include poppins;
+  @include roboto;
   overflow: hidden;
   position: relative;
   pointer-events: auto;
@@ -47,12 +47,12 @@ $red: rgb(239, 13, 0);
 
   p {
     font-size: 12px;
-    @include poppins;
+    @include roboto;
     margin: 0;
   }
 
   .C4C__text--large {
-    @include poppins;
+    @include roboto;
     font-size: 21px;
     font-weight: 600;
     margin: 0.2em 0;
@@ -73,7 +73,8 @@ $red: rgb(239, 13, 0);
   color: #fff;
   cursor: pointer;
   font-size: 14px;
-  @include poppins;
+  font-weight: bold;
+  @include roboto;
   display: inline-block;
   padding: 0.6em 1.5em;
   transition: 0.2s background-color, 0.2s transform;
@@ -183,7 +184,7 @@ $red: rgb(239, 13, 0);
   }
 
   p {
-    @include poppins;
+    @include roboto;
     font-size: 14px;
     line-height: 1.5;
     margin: 0.75em 0 0.5em;
@@ -229,13 +230,13 @@ $red: rgb(239, 13, 0);
   }
 
   h2 {
-    @include poppins;
+    @include roboto;
     text-transform: none;
     font-size: 1.8rem;
   }
 
   p {
-    @include poppins;
+    @include roboto;
     font-size: 0.9rem;
   }
 
@@ -255,7 +256,7 @@ $red: rgb(239, 13, 0);
 
   h2 {
     color: $blue;
-    @include poppins;
+    @include roboto;
     font-size: 2rem;
     text-transform: none;
     line-height: 1;
@@ -265,7 +266,7 @@ $red: rgb(239, 13, 0);
 
   p {
     font-size: 14px;
-    @include poppins;
+    @include roboto;
     margin: 0;
   }
 
