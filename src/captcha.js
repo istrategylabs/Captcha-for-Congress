@@ -41,7 +41,7 @@ let topPercent = -1;
 
   header.classList.add("C4C__header");
   header.innerHTML = `<p>Select all images of</p>
-    <p class="C4C__text--large">people who should not be planning my family</p>
+    <p class="C4C__text--large">people who should not be planning my family.</p>
     <p>Click verify once you're done.</p>
   `;
   modal.appendChild(header);
