@@ -27,3 +27,9 @@ If you would like the captcha to appear automatically once the page has loaded, 
   The captcha will automatically appear by this div.
 </div>
 ```
+
+By default, the captcha appears over a semi-transparent "shadow" that covers the rest of the page. To disable this, add `data-c4c-shadow="none"` to the element.
+
+```html
+<button data-c4c data-c4c-shadow="none">Click me</button>
+```
