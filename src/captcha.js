@@ -159,7 +159,7 @@ function verifySelected(numSelected) {
   } else {
     body.classList.add("C4C__modalStepTwo__body--large");
     body.innerHTML =
-      "<h2>You Got It!</h2><p>Lawmakers should not be part of our family planning process</p>";
+      "<h2>You Got It!</h2><p>Lawmakers should not be part of our family planning process.</p>";
   }
   modalStepTwo.appendChild(body);
   const share = document.createElement("div");
