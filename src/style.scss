@@ -3,6 +3,7 @@
 $blue: #0e2ce4;
 $blue_hover: darken($blue, 20%);
 $red: rgb(239, 13, 0);
+$green: #2bbe4e;
 
 @mixin roboto {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -115,7 +116,7 @@ $red: rgb(239, 13, 0);
     }
 
     &:after {
-      background-color: $blue;
+      background-color: $green;
       background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAzMjAuOSAyNTEuNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIwLjkgMjUxLjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWxpbmUgY2xhc3M9InN0MCIgZmlsbD0iI2ZmZiIgcG9pbnRzPSIxNTQuNiwyMDguNyAzMjAuOSw0Mi40IDI3OC41LDAgMTEyLjIsMTY2LjMgNDIuNCw5Ni41IDAsMTM4LjkgMTEyLjUsMjUxLjQgIi8+PC9zdmc+Cg==);
       background-size: 70%;
       background-repeat: no-repeat;
