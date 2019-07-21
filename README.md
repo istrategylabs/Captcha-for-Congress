@@ -9,7 +9,7 @@ Hey! Thanks for showing up for reproductive rights. If you're here, you must wan
 Captcha for Congress can be added to your site by adding the code below somewhere in the HTML of your page.
 
 ```html
-<script src="/path/to/captcha-for-congress.js"></script>
+<script src="https://captchaforcongress.com/captcha-for-congress.min.js"></script>
 ```
 
 Once you have that script on your page, you need to tell the captcha where and when it should appear. If you add the attribute `data-c4c` to any element, then when the user clicks on that element, the captcha will appear!
