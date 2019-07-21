@@ -7,7 +7,8 @@ import men from "./men";
  * Exposing this object globally in case we want to provide an API
  */
 const C4C = {
-  mount
+  mount,
+  DEBUG: false
 };
 window.C4C = C4C;
 
@@ -111,6 +112,7 @@ function clamp(n, min, max) {
  * @param {boolean} escReset
  */
 function showModal(e, hideShadow = false, escReset = false) {
+  document.body.style.overflow = "hidden";
   document.body.appendChild(container);
   if (hideShadow) container.classList.add("C4C__shadow--hideShadow");
   container.__C4C_escReset = escReset;
@@ -121,6 +123,7 @@ function showModal(e, hideShadow = false, escReset = false) {
     if (x > window.innerWidth - width) x = window.innerWidth - width;
     let y = e.pageY - height / 2;
     if (y < 0) y = 0;
+    if (y + height > window.innerHeight) y = window.innerHeight - height;
     container.classList.add("active");
     modal.style.left = x + "px";
     leftPercent = x / window.innerWidth;
@@ -132,6 +135,7 @@ function showModal(e, hideShadow = false, escReset = false) {
 
 function hideModal() {
   // reset everything
+  document.body.style.overflow = "";
   container.classList.remove("active");
   Array.from(document.querySelectorAll("[data-captcha-img]")).forEach(el =>
     el.parentNode.classList.remove("active")
@@ -214,6 +218,7 @@ window.addEventListener("resize", () => {
 
 function mount() {
   const targets = Array.from(document.querySelectorAll("[data-c4c]"));
+  if (window.C4C.DEBUG) console.log("mounting", targets);
   targets.forEach(target => {
     if (target.getAttribute("data-c4c") === "auto") {
       const rect = target.getBoundingClientRect();

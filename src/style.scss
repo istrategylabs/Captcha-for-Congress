@@ -5,9 +5,12 @@ $blue_hover: darken($blue, 20%);
 $red: rgb(239, 13, 0);
 $green: #2bbe4e;
 
+$small_screen: 480px;
+
 @mixin roboto {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1.15;
+  letter-spacing: 0;
 }
 
 .C4C__shadow {
@@ -19,6 +22,7 @@ $green: #2bbe4e;
   height: 100vh;
   width: 100vw;
   transition: 0.2s opacity;
+  z-index: 99999;
 
   &.active {
     opacity: 1;
@@ -38,6 +42,10 @@ $green: #2bbe4e;
   position: relative;
   pointer-events: auto;
   width: 300px;
+
+  @media screen and (max-width: $small_screen) {
+    width: 260px;
+  }
 }
 
 .C4C__header {
