@@ -221,6 +221,7 @@ $small_screen: 480px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 22px;
     text-transform: none;
+    font-weight: bold;
     margin: 0;
   }
 }
@@ -235,11 +236,13 @@ $small_screen: 480px;
     padding: 35px 15px;
     h2 {
       font-size: 2.3rem;
+      font-weight: bold;
     }
   }
 
   h2 {
     @include roboto;
+    font-weight: bold;
     text-transform: none;
     font-size: 1.8rem;
   }
@@ -266,6 +269,7 @@ $small_screen: 480px;
   h2 {
     color: $blue;
     @include roboto;
+    font-weight: bold;
     font-size: 2rem;
     text-transform: none;
     line-height: 1;

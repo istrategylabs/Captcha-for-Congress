@@ -112,11 +112,11 @@ function clamp(n, min, max) {
  * @param {boolean} escReset
  */
 function showModal(e, hideShadow = false, escReset = false) {
-  document.body.style.overflow = "hidden";
   document.body.appendChild(container);
   if (hideShadow) container.classList.add("C4C__shadow--hideShadow");
   container.__C4C_escReset = escReset;
   setTimeout(() => {
+    document.body.style.overflow = "hidden";
     const { width, height } = modal.getBoundingClientRect();
     let x = e.pageX - width / 2;
     if (x < 0) x = 0;
@@ -216,24 +216,27 @@ window.addEventListener("resize", () => {
   modal.style.top = top + "px";
 });
 
-function mount() {
+function mountAtElement(el) {
+  if (window.C4C.DEBUG) console.log("mounting", el);
+  if (el.getAttribute("data-c4c") === "auto") {
+    const rect = el.getBoundingClientRect();
+    showModal(
+      {
+        pageX: rect.left + rect.width / 2,
+        pageY: rect.top + rect.height / 2
+      },
+      el.getAttribute("data-c4c-shadow") === "none",
+      el.getAttribute("data-c4c-esc") === "reset"
+    );
+  } else {
+    el.addEventListener("click", showModal);
+  }
+}
+
+function mount(el = null) {
+  if (el) return mountAtElement(el);
   const targets = Array.from(document.querySelectorAll("[data-c4c]"));
-  if (window.C4C.DEBUG) console.log("mounting", targets);
-  targets.forEach(target => {
-    if (target.getAttribute("data-c4c") === "auto") {
-      const rect = target.getBoundingClientRect();
-      showModal(
-        {
-          pageX: rect.left + rect.width / 2,
-          pageY: rect.top + rect.height / 2
-        },
-        target.getAttribute("data-c4c-shadow") === "none",
-        target.getAttribute("data-c4c-esc") === "reset"
-      );
-    } else {
-      target.addEventListener("click", showModal);
-    }
-  });
+  targets.forEach(mountAtElement);
 }
 
 window.addEventListener("DOMContentLoaded", mount);
