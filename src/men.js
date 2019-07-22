@@ -22,7 +22,7 @@ export default [
   {
     name: "Jason Chaffetz",
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/39/Jason_Chaffetz%2C_official_portrait%2C_111th_Congress.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Jason_Chaffetz%2C_official_portrait%2C_111th_Congress.jpg/360px-Jason_Chaffetz%2C_official_portrait%2C_111th_Congress.jpg"
   },
   {
     name: "Donald Trump",
@@ -46,6 +46,7 @@ export default [
   },
   {
     name: "Devin Nunes",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Devin_Nunes.jpg"
+    photo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Devin_Nunes.jpg/384px-Devin_Nunes.jpg"
   }
 ];

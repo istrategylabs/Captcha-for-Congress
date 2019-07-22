@@ -100,7 +100,7 @@ $small_screen: 480px;
   background: #fff;
   padding: 8px;
 
-  > div {
+  .C4C__image__outer {
     cursor: pointer;
     float: left;
     margin: 0 8px 8px 0;
@@ -108,6 +108,11 @@ $small_screen: 480px;
     position: relative;
     width: calc(33.333% - 5.333px);
     transition: 0.2s transform;
+
+    &:focus {
+      box-shadow: 0 0 0 4px $blue;
+      outline: none;
+    }
 
     &:hover {
       transform: rotate(2deg) scale(0.95);

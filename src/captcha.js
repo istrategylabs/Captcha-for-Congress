@@ -51,7 +51,9 @@ let topPercent = -1;
   modal.appendChild(imageContainer);
 
   men.forEach(({ name, photo }) => {
-    const imageOuter = document.createElement("div");
+    const imageOuter = document.createElement("a");
+    imageOuter.classList.add("C4C__image__outer");
+    imageOuter.setAttribute("href", "#");
     const image = document.createElement("img");
     image.setAttribute("data-captcha-img", "1");
     image.setAttribute("alt", name);
@@ -75,7 +77,7 @@ let topPercent = -1;
  * for stylistic reasons.
  */
 function selectImage(e) {
-  const imageOuter = e.target.parentNode;
+  const imageOuter = e.target.closest(".C4C__image__outer");
   imageOuter.classList.toggle("active");
 }
 
@@ -190,7 +192,9 @@ function verify() {
 
 // clicking on the shadow should hide it
 container.addEventListener("click", e => {
+  console.log(e.target);
   if (e.target === container) hideModal();
+  if (e.target.classList.contains("C4C__image__outer")) return selectImage(e);
   if (e.target.getAttribute("data-captcha-img")) selectImage(e);
   if (e.target === verifyButton) verify();
 });
@@ -239,4 +243,4 @@ function mount(el = null) {
   targets.forEach(mountAtElement);
 }
 
-window.addEventListener("DOMContentLoaded", mount);
+window.addEventListener("DOMContentLoaded", () => mount());
