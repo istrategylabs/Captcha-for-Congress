@@ -54,10 +54,16 @@ $small_screen: 480px;
   color: #fff;
   padding: 15px;
 
-  p {
+  p, a {
+    color: #fff;
     font-size: 12px;
     @include roboto;
     margin: 0;
+    text-decoration: none;
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   .C4C__text--large {
@@ -246,13 +252,16 @@ $small_screen: 480px;
   }
 
   h2 {
+    color: #fff;
     @include roboto;
     font-weight: bold;
     text-transform: none;
     font-size: 1.8rem;
   }
 
-  p {
+  p,
+  small {
+    color: #fff;
     @include roboto;
     font-size: 0.9rem;
   }

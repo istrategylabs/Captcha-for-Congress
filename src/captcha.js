@@ -43,7 +43,7 @@ let topPercent = -1;
   header.classList.add("C4C__header");
   header.innerHTML = `<p>Select all images of</p>
     <p class="C4C__text--large">people who should not be planning my family.</p>
-    <p>Click verify once you're done.</p>
+    <p><a id="C4C__header__id" href="#">Click verify once you're done.</a></p>
   `;
   modal.appendChild(header);
 
@@ -114,10 +114,12 @@ function clamp(n, min, max) {
  * @param {boolean} escReset
  */
 function showModal(e, hideShadow = false, escReset = false) {
+  if (hasBeenShown) return;
   document.body.appendChild(container);
   if (hideShadow) container.classList.add("C4C__shadow--hideShadow");
   container.__C4C_escReset = escReset;
   setTimeout(() => {
+    document.getElementById('C4C__header__id').focus();
     document.body.style.overflow = "hidden";
     const { width, height } = modal.getBoundingClientRect();
     let x = e.pageX - width / 2;
@@ -143,7 +145,7 @@ function hideModal() {
     el.parentNode.classList.remove("active")
   );
   setTimeout(() => {
-    document.body.removeChild(container);
+    if (document.body.contains(container)) document.body.removeChild(container);
     modalStepTwo.classList.remove("active");
   }, 100);
 }
