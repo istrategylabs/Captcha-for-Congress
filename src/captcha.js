@@ -173,8 +173,8 @@ function verifySelected(numSelected) {
       <h2>Share Captcha for Congress</h2>
       <p>Help keep reproductive rights at the top of everyone's mind on the Internet.</p>
       <div>
-        <a class="C4C__share__button">${twitter}</a>
-        <a class="C4C__share__button">${facebook}</a>
+        <a class="C4C__share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcaptchaforcongress.com&text=Bots%20don%27t%20belong%20on%20the%20Internet.%20Congress%20doesn%27t%20belong%20between%20our%20legs.%20Get%20Captcha%20for%20Congress%20and%20show%20your%20support%20for%20reproductive%20rights!" target="_blank">${twitter}</a>
+        <a class="C4C__share__button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcaptchaforcongress.com" target="_blank">${facebook}</a>
       </div>
     </div>`;
   modalStepTwo.appendChild(share);
