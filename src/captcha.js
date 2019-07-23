@@ -8,7 +8,8 @@ import men from "./men";
  */
 const C4C = {
   mount,
-  DEBUG: false
+  DEBUG: false,
+  onHide: function() {}
 };
 window.C4C = C4C;
 
@@ -147,6 +148,7 @@ function hideModal() {
   setTimeout(() => {
     if (document.body.contains(container)) document.body.removeChild(container);
     modalStepTwo.classList.remove("active");
+    if (window.C4C.onHide && typeof window.C4C.onHide === 'function') window.C4C.onHide();
   }, 100);
 }
 
@@ -194,7 +196,6 @@ function verify() {
 
 // clicking on the shadow should hide it
 container.addEventListener("click", e => {
-  console.log(e.target);
   if (e.target === container) hideModal();
   if (e.target.classList.contains("C4C__image__outer")) return selectImage(e);
   if (e.target.getAttribute("data-captcha-img")) selectImage(e);
