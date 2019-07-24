@@ -23,6 +23,8 @@ const imageContainer = document.createElement("div");
 const footer = document.createElement("footer");
 const verifyButton = document.createElement("button");
 const modalStepTwo = document.createElement("div");
+const closeContainer = document.createElement('div');
+const close = document.createElement('button');
 
 /**
  * Global-ish boolean for if we have shown the modal or not.
@@ -71,6 +73,12 @@ let topPercent = -1;
 
   modalStepTwo.classList.add("C4C__modalStepTwo");
   modal.appendChild(modalStepTwo);
+
+  closeContainer.classList.add('C4C__closeContainer');
+  close.classList.add('C4C__close');
+  close.addEventListener('click', hideModal);
+  closeContainer.appendChild(close);
+  container.appendChild(closeContainer);
 })();
 
 /**
@@ -130,10 +138,9 @@ function showModal(e, hideShadow = false, escReset = false) {
     if (y < 0) y = 0;
     if (y + height > window.innerHeight) y = window.innerHeight - height;
     container.classList.add("active");
-    modal.style.left = x + "px";
     leftPercent = x / window.innerWidth;
-    modal.style.top = y + "px";
     topPercent = y / window.innerHeight;
+    position(x, y);
     ping();
   }, 100);
 }
@@ -214,13 +221,19 @@ window.addEventListener("keydown", e => {
   if (e.keyCode === 27) hideModal();
 });
 
+function position(x, y) {
+  modal.style.left = x + "px";
+  modal.style.top = y + "px";
+  closeContainer.style.left = x + "px";
+  closeContainer.style.top = y + "px";
+}
+
 window.addEventListener("resize", () => {
   if (!container.classList.contains("active")) return;
   // maintain leftPercent and topPercent ratio
   const left = leftPercent * window.innerWidth;
   const top = topPercent * window.innerHeight;
-  modal.style.left = left + "px";
-  modal.style.top = top + "px";
+  position(left, top);
 });
 
 function mountAtElement(el) {
