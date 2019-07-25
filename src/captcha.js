@@ -18,13 +18,13 @@ window.C4C = C4C;
  */
 const container = document.createElement("div");
 const modal = document.createElement("div");
+const modalInner = document.createElement("div");
 const header = document.createElement("header");
 const imageContainer = document.createElement("div");
 const footer = document.createElement("footer");
 const verifyButton = document.createElement("button");
 const modalStepTwo = document.createElement("div");
-const closeContainer = document.createElement('div');
-const close = document.createElement('button');
+const close = document.createElement("button");
 
 /**
  * Global-ish boolean for if we have shown the modal or not.
@@ -41,6 +41,8 @@ let topPercent = -1;
 (function setupDOMElements() {
   container.classList.add("C4C__shadow");
   modal.classList.add("C4C__modal");
+  modalInner.classList.add("C4C__modal__inner");
+  modal.appendChild(modalInner);
   container.appendChild(modal);
 
   header.classList.add("C4C__header");
@@ -48,10 +50,10 @@ let topPercent = -1;
     <p class="C4C__text--large">people who should not be planning my family.</p>
     <p><a id="C4C__header__id" href="#">Click verify once you're done.</a></p>
   `;
-  modal.appendChild(header);
+  modalInner.appendChild(header);
 
   imageContainer.classList.add("C4C__image-container", "C4C__clearfix");
-  modal.appendChild(imageContainer);
+  modalInner.appendChild(imageContainer);
 
   men.forEach(({ name, photo }) => {
     const imageOuter = document.createElement("a");
@@ -69,16 +71,14 @@ let topPercent = -1;
   verifyButton.innerHTML = "Verify";
   verifyButton.classList.add("C4C__button");
   footer.appendChild(verifyButton);
-  modal.appendChild(footer);
+  modalInner.appendChild(footer);
 
   modalStepTwo.classList.add("C4C__modalStepTwo");
-  modal.appendChild(modalStepTwo);
+  modalInner.appendChild(modalStepTwo);
 
-  closeContainer.classList.add('C4C__closeContainer');
-  close.classList.add('C4C__close');
-  close.addEventListener('click', hideModal);
-  closeContainer.appendChild(close);
-  container.appendChild(closeContainer);
+  close.classList.add("C4C__close");
+  close.addEventListener("click", hideModal);
+  container.appendChild(close);
 })();
 
 /**
@@ -120,15 +120,15 @@ function clamp(n, min, max) {
  *
  * @param {MouseEvent} e
  * @param {boolean} hideShadow
- * @param {boolean} escReset
  */
-function showModal(e, hideShadow = false, escReset = false) {
+function showModal(e, isAuto = false, hideShadow = false, escReset = false) {
   if (hasBeenShown) return;
   document.body.appendChild(container);
+  if (isAuto) container.classList.add("auto");
   if (hideShadow) container.classList.add("C4C__shadow--hideShadow");
   container.__C4C_escReset = escReset;
   setTimeout(() => {
-    document.getElementById('C4C__header__id').focus();
+    document.getElementById("C4C__header__id").focus();
     document.body.style.overflow = "hidden";
     const { width, height } = modal.getBoundingClientRect();
     let x = e.pageX - width / 2;
@@ -155,7 +155,8 @@ function hideModal() {
   setTimeout(() => {
     if (document.body.contains(container)) document.body.removeChild(container);
     modalStepTwo.classList.remove("active");
-    if (window.C4C.onHide && typeof window.C4C.onHide === 'function') window.C4C.onHide();
+    if (window.C4C.onHide && typeof window.C4C.onHide === "function")
+      window.C4C.onHide();
   }, 100);
 }
 
@@ -224,8 +225,6 @@ window.addEventListener("keydown", e => {
 function position(x, y) {
   modal.style.left = x + "px";
   modal.style.top = y + "px";
-  closeContainer.style.left = x + "px";
-  closeContainer.style.top = y + "px";
 }
 
 window.addEventListener("resize", () => {
@@ -238,18 +237,34 @@ window.addEventListener("resize", () => {
 
 function mountAtElement(el) {
   if (window.C4C.DEBUG) console.log("mounting", el);
-  if (el.getAttribute("data-c4c") === "auto") {
-    const rect = el.getBoundingClientRect();
-    showModal(
-      {
+  if (el.tagName === "FORM") {
+    el.addEventListener("submit", e => {
+      e.preventDefault();
+      const rect = el.getBoundingClientRect();
+      showModal({
         pageX: rect.left + rect.width / 2,
         pageY: rect.top + rect.height / 2
+      });
+      window.C4C.onHide = () => el.submit();
+    });
+  } else if (el.getAttribute("data-c4c") === "auto") {
+    showModal(
+      {
+        pageX: window.innerWidth / 2,
+        pageY: window.innerHeight / 2
       },
+      true,
       el.getAttribute("data-c4c-shadow") === "none",
       el.getAttribute("data-c4c-esc") === "reset"
     );
   } else {
-    el.addEventListener("click", showModal);
+    el.addEventListener("click", e => {
+      e.preventDefault();
+      showModal(e);
+      if (el.tagName === "A") {
+        window.C4C.onHide = () => window.location.assign(el.href);
+      }
+    });
   }
 }
 

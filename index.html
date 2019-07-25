@@ -9,40 +9,22 @@
     <script>
       window.C4C.DEBUG = true;
       window.C4C.onHide = function() {
-        console.log('hiding modal')
-      }
+        console.log("hiding modal");
+      };
     </script>
   </head>
   <body>
     <h1>Hello</h1>
+    <form target="/post" method="POST" data-c4c>
+      <input />
+      <button>Submit</button>
+    </form>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero modi nam
-      temporibus et cupiditate ltio aliquid ipsum. Lorem, ipsum dolor sit amet
-      consectetur adipisicing elit. Veniam molestias doloribus quidem dolorum
-      fuga eius, autem voluptates, optio hic excepturi ab veritatis aut rerum.
-      Lorem ipsum dolor sit amet coicing elit. Veniam molestias doloribus quidem
-      dolorum fuga eius, autem voluptates, optio hic excepturi ab veritatis aut
-      rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-      modi nam temporibus et cupiditate labore, velit, quasi sequi accusamus
-      eligendi, vero minima architecto atque sit adipisci ullam optio aliquid
-      ipsum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam
-      molestias doloribus quidem dolorum fuga eius, autem voluptates, optio hic
-      excepturi ab veritatis aut rerum. Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Libero modi nam temporibus et cupiditate labore, velit,
-      quasi sequi accusamus eligendi, vero minima architecto atque sit adipisci
-      ullam optio aliquid ipsum. Lorem, ipsum dolor sit amet consectetur
-      adipisicing elit. Veniam molestias doloribus quidem dolorum fuga eius,
-      autem voluptates, optio hic excepturi ab veritatis aut rerum. Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Libero modi nam temporibus et
-      cupiditate labore, velit, quasi sequi accusamus eligendi, vero minima
-      architecto atque sit adipisci ullam optio aliquid ipsum. Lorem, ipsum
-      dolor sit amet consectetur adipisicing elit. Veniam molestias doloribus
-      quidem dolorum fuga eius, autem voluptates, optio hic excepturi ab
-      veritatis aut rerum.
-      <button data-c4c="auto">Click me</button> Officiis repudiandae veritatis
-      doloribus ipsum alias ad praesentium corrupti sint explicabo at magnam,
-      corporis voluptates quod cumque vel magni, odit delectus, numquam quam
-      dolorem porro qui.
+      <br /><br /><br />Officiis repudiandae veritatis doloribus ipsum alias ad
+      praesentium corrupti sint explicabo at magnam, corporis voluptates quod
+      cumque vel magni, odit delectus, numquam quam dolorem porro qui.
+      <a href="/test" data-c4c>CLICK ME</a>
+      <button data-c4c="auto">CLICK EM TOO</button>
     </p>
   </body>
 </html>

@@ -6,6 +6,7 @@ $red: rgb(239, 13, 0);
 $green: #2bbe4e;
 
 $small_screen: 480px;
+$small_height: 600px;
 
 @mixin roboto {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -20,12 +21,17 @@ $small_screen: 480px;
   top: 0;
   left: 0;
   height: 100vh;
+  min-height: 700px;
   width: 100vw;
   transition: 0.2s opacity;
   z-index: 99999;
 
   &.active {
     opacity: 1;
+  }
+
+  &.auto {
+    background: rgba(0, 0, 0, 0.95);
   }
 
   &.C4C__shadow--hideShadow {
@@ -36,16 +42,39 @@ $small_screen: 480px;
 
 .C4C__modal {
   background: $blue;
-  box-shadow: 0 0 0 6px $blue;
   @include roboto;
-  overflow: hidden;
   position: relative;
   pointer-events: auto;
   width: 300px;
 
-  @media screen and (max-width: $small_screen) {
+  .auto & {
+    transform: translate(0, 60px) rotate(3deg);
+    &::before {
+      display: block;
+      @include roboto;
+      font-weight: bold;
+      content: "Prove your humanity to continue";
+      color: #fff;
+      position: absolute;
+      text-transform: uppercase;
+      top: -84px;
+      text-align: center;
+      width: 100%;
+      font-size: 28px;
+      transform: rotate(-3deg) scale(1.2);
+      line-height: 0.9;
+    }
+  }
+
+  @media screen and (max-width: $small_screen), (max-height: $small_height) {
     width: 260px;
   }
+}
+
+.C4C__modal__inner {
+  box-shadow: 0 0 0 6px $blue;
+  overflow: hidden;
+  position: relative;
 }
 
 .C4C__header {
@@ -54,7 +83,8 @@ $small_screen: 480px;
   color: #fff;
   padding: 15px;
 
-  p, a {
+  p,
+  a {
     color: #fff;
     font-size: 12px;
     @include roboto;
@@ -271,46 +301,35 @@ $small_screen: 480px;
   }
 }
 
-.C4C__closeContainer {
-  position: fixed;
-  width: 300px;
-
-  @media screen and (max-width: $small_screen) {
-    width: 260px;
-  }
-}
-
 .C4C__close {
   appearance: none;
-  background: $blue;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
-  border: 0 none;
+  background: transparent;
+  border: 2px solid #fff;
   cursor: pointer;
   padding: 0;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 30px;
+  right: 30px;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   transform: translate(50%, -50%);
   transition: 0.2s background-color, 0.2s transform;
   will-change: transform;
 
-  &:hover, &:focus {
-    background-color: $blue_hover;
+  &:hover,
+  &:focus {
     outline: 0;
-    transform: translate(50%, -50%) scale(1.1);
+    transform: translate(50%, -50%) scale(1.1) rotate(5deg);
   }
 
   &::after {
     content: "×";
-    font-size: 21px;
+    font-size: 28px;
     display: block;
     color: #fff;
-    color: rgba(255, 255, 255, 0.9);
     position: absolute;
-    top: 2px;
+    top: -3px;
     left: 0;
     width: 100%;
     text-align: center;
