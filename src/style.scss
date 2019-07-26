@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+@import "humanity";
 
 $blue: #0e2ce4;
 $blue_hover: darken($blue, 20%);
@@ -50,19 +51,20 @@ $small_height: 600px;
   .auto & {
     transform: translate(0, 60px) rotate(3deg);
     &::before {
+      @include humanity;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       display: block;
-      @include roboto;
-      font-weight: bold;
       content: "Prove your humanity to continue";
       color: #fff;
       position: absolute;
-      text-transform: uppercase;
-      top: -84px;
+      top: -17vh;
       text-align: center;
+      height: 15vh;
       width: 100%;
-      font-size: 28px;
+      font-size: 0;
       transform: rotate(-3deg) scale(1.2);
-      line-height: 0.9;
     }
   }
 
