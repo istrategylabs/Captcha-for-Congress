@@ -27,7 +27,7 @@ If you would like the CAPTCHA to appear automatically once the page has loaded, 
 </div>
 ```
 
-<img src="https://captchaforcongress.com/isl-captcha-auto.gif" />
+<img src="https://captchaforcongress.com/isl-captcha-auto.gif?cb" />
 
 By default, the CAPTCHA appears over a semi-transparent "shadow" that covers the rest of the page. To disable this, add `data-c4c-shadow="none"` to the element.
 
