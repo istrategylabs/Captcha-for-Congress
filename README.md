@@ -27,9 +27,7 @@ If you would like the CAPTCHA to appear automatically once the page has loaded, 
 </div>
 ```
 
-^^^
-AUTO GIF GOES HERE
-^^^
+<img src="https://captchaforcongress.com/isl-captcha-auto.gif" />
 
 By default, the CAPTCHA appears over a semi-transparent "shadow" that covers the rest of the page. To disable this, add `data-c4c-shadow="none"` to the element.
 
@@ -45,9 +43,7 @@ If you add the attribute `data-c4c` to any element, the CAPTCHA will appear when
 
 If the element you add the attribute to is a `<form>`, then the CAPTCHA will appear when the visitor submits the form. Then, once they dismiss it, the form data will be submitted as it would originally have been.
 
-^^^
-FORM SUBMIT GIF GOES HERE
-^^^
+<img src="https://captchaforcongress.com/isl-captcha-form.gif" />
 
 ```html
 <button data-c4c>Click me!</button>
