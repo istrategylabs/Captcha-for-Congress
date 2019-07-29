@@ -136,7 +136,8 @@ function showModal(e, isAuto = false, hideShadow = false, escReset = false) {
     if (x > window.innerWidth - width) x = window.innerWidth - width;
     let y = e.pageY - height / 2;
     if (y + height > window.innerHeight) y = window.innerHeight - height;
-    if (y < 0) y = 0;
+    if (isAuto && y < 40) y = 40;
+    if (!isAuto && y < 0) y = 0;
     container.classList.add("active");
     leftPercent = x / window.innerWidth;
     topPercent = y / window.innerHeight;

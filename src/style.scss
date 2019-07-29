@@ -69,7 +69,8 @@ $small_height: 600px;
       transform: rotate(-3deg) scale(1.2);
 
       @media screen and (max-height: 500px) {
-        display: none;
+        height: 75px;
+        top: -85px;
       }
     }
   }
