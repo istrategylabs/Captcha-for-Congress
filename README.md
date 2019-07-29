@@ -7,13 +7,14 @@ Hey! Thanks for showing up for reproductive rights. If you're here, you must wan
 ## Recommended Use
 We've built CAPTCHA for Congress to be used in one of two ways:
 1. **Page Load**: You can install the CAPTCHA to appear once a page is loaded. For maximum awareness, your homepage is best. If you'd prefer to use CAPTCHA on secondary pages, we recommend areas that don't interrupt key conversions, e.g. your blog, your educational content, or forums/community pages. 
+2. **Click or Form Submit**: You can have the CAPTCHA appear when the visitor clicks on an element (a button, link, image, etc.) or when they submit a form. The CAPTCHA will not interfere with native browser events — when the visitor dismisses the CAPTCHA, they will be redirected to the link's URL or the form will submit as it would have by default.
 
 ## First Step
 
 CAPTCHA for Congress can be added to your site by adding the code below somewhere in the HTML of your page. 
 
 ```html
-<script src="https://captchaforcongress.com/captcha-for-congress.min.js"></script>
+<script src="https://captchaforcongress.com/captcha.js"></script>
 ```
 
 ## Appear on page load
@@ -22,9 +23,11 @@ If you would like the CAPTCHA to appear automatically once the page has loaded, 
 
 ```html
 <div data-c4c="auto">
-  The CAPTCHA will automatically appear by this div.
+  The CAPTCHA will automatically on the page!
 </div>
 ```
+
+
 
 By default, the CAPTCHA appears over a semi-transparent "shadow" that covers the rest of the page. To disable this, add `data-c4c-shadow="none"` to the element.
 
