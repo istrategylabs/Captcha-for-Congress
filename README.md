@@ -23,23 +23,39 @@ If you would like the CAPTCHA to appear automatically once the page has loaded, 
 
 ```html
 <div data-c4c="auto">
-  The CAPTCHA will automatically on the page!
+  The CAPTCHA will automatically appear on the page!
 </div>
 ```
 
-
+^^^
+AUTO GIF GOES HERE
+^^^
 
 By default, the CAPTCHA appears over a semi-transparent "shadow" that covers the rest of the page. To disable this, add `data-c4c-shadow="none"` to the element.
 
 ```html
-<button data-c4c data-c4c-shadow="none">Click me</button>
+<div data-c4c="auto" data-c4c-shadow="none">
+  The CAPTCHA will automatically appear on the page with no shadow behind it!
+</div>
 ```
 
-## Appear on click
+## Appear on click or form submit
 
-If you add the attribute `data-c4c` to any element, the CAPTCHA will appear when the user clicks on that element!
+If you add the attribute `data-c4c` to any element, the CAPTCHA will appear when the visitor clicks on that element! We recommend only using this approach with page elements that a user would ordinarily interact with, such as a link or a button.
+
+If the element you add the attribute to is a `<form>`, then the CAPTCHA will appear when the visitor submits the form. Then, once they dismiss it, the form data will be submitted as it would originally have been.
+
+^^^
+FORM SUBMIT GIF GOES HERE
+^^^
 
 ```html
 <button data-c4c>Click me!</button>
 ```
 
+```html
+<form action="/" method="POST" data-c4c>
+  <input type="email" />
+  <input type="submit">Submit</input>
+</form>
+```
