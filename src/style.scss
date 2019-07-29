@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 @import "humanity";
+@import "humanity-large";
 
 $blue: #0e2ce4;
 $blue_hover: darken($blue, 20%);
@@ -71,6 +72,15 @@ $small_height: 600px;
       @media screen and (max-height: 500px) {
         height: 75px;
         top: -85px;
+      }
+
+      @media screen and (min-width: 800px) and (min-height: 580px) {
+        @include humanity-large;
+        height: 300px;
+        width: 500px;
+        top: -230px;
+        left: 50%;
+        transform: rotate(-3deg) translateX(-50%);
       }
     }
   }
