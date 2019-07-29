@@ -17,12 +17,14 @@ $small_height: 600px;
 
 .C4C__shadow {
   background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
   opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
+  padding-bottom: 100px;
+  overflow-y: scroll;
   height: 100vh;
-  min-height: 700px;
   width: 100vw;
   transition: 0.2s opacity;
   z-index: 99999;
@@ -65,6 +67,10 @@ $small_height: 600px;
       width: 100%;
       font-size: 0;
       transform: rotate(-3deg) scale(1.2);
+
+      @media screen and (max-height: 500px) {
+        display: none;
+      }
     }
   }
 
@@ -309,10 +315,11 @@ $small_height: 600px;
   border: 2px solid #fff;
   cursor: pointer;
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: 30px;
   right: 30px;
   border-radius: 50%;
+  line-height: 1;
   height: 35px;
   width: 35px;
   transform: translate(50%, -50%);
@@ -331,7 +338,7 @@ $small_height: 600px;
     display: block;
     color: #fff;
     position: absolute;
-    top: -3px;
+    top: -1px;
     left: 0;
     width: 100%;
     text-align: center;

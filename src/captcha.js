@@ -135,8 +135,8 @@ function showModal(e, isAuto = false, hideShadow = false, escReset = false) {
     if (x < 0) x = 0;
     if (x > window.innerWidth - width) x = window.innerWidth - width;
     let y = e.pageY - height / 2;
-    if (y < 0) y = 0;
     if (y + height > window.innerHeight) y = window.innerHeight - height;
+    if (y < 0) y = 0;
     container.classList.add("active");
     leftPercent = x / window.innerWidth;
     topPercent = y / window.innerHeight;
@@ -240,7 +240,12 @@ function mountAtElement(el) {
   if (el.tagName === "FORM") {
     el.addEventListener("submit", e => {
       e.preventDefault();
-      const rect = el.getBoundingClientRect();
+      let rect = el.getBoundingClientRect();
+      if (el.querySelector('[type="submit"], button')) {
+        rect = el
+          .querySelector('[type="submit"], button')
+          .getBoundingClientRect();
+      }
       showModal({
         pageX: rect.left + rect.width / 2,
         pageY: rect.top + rect.height / 2
