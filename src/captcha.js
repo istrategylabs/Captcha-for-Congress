@@ -206,8 +206,14 @@ function verify() {
 // clicking on the shadow should hide it
 container.addEventListener("click", e => {
   if (e.target === container) hideModal();
-  if (e.target.classList.contains("C4C__image__outer")) return selectImage(e);
-  if (e.target.getAttribute("data-captcha-img")) selectImage(e);
+  if (e.target.classList.contains("C4C__image__outer")) {
+    e.preventDefault();
+    return selectImage(e);
+  }
+  if (e.target.getAttribute("data-captcha-img")) {
+    e.preventDefault();
+    return selectImage(e);
+  }
   if (e.target === verifyButton) verify();
 });
 
