@@ -263,18 +263,6 @@ $small_height: 600px;
     margin-bottom: 0.7rem;
     font-size: 0.7rem;
     position: relative;
-
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: -130px;
-      height: 120px;
-      width: 2px;
-      background: $red;
-      left: calc(50% - 1px);
-      z-index: -1;
-    }
   }
 
   h2 {
@@ -283,6 +271,21 @@ $small_height: 600px;
     text-transform: none;
     font-weight: bold;
     margin: 0;
+  }
+}
+
+.C4C__share__line {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -130px;
+    height: 120px;
+    width: 2px;
+    background: $red;
+    left: calc(50% - 1px);
+    z-index: -1;
   }
 }
 
@@ -393,14 +396,15 @@ $small_height: 600px;
   border: 2px solid $red;
   color: $blue;
   display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-decoration: none;
-  width: 40px;
-  height: 40px;
   margin: 10px 10px 0;
-  border-radius: 50%;
   position: relative;
   transition: 0.2s transform, 0.2s box-shadow;
   box-shadow: -4px 4px 0 0 $red;
+  padding: 10px 20px;
 
   &:hover {
     transform: translate(-4px, 4px);

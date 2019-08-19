@@ -1,6 +1,4 @@
 import "./style.scss";
-import facebook from "./facebook";
-import twitter from "./twitter";
 import men from "./men";
 
 /**
@@ -184,12 +182,10 @@ function verifySelected(numSelected) {
   const share = document.createElement("div");
   share.classList.add("C4C__share");
   share.innerHTML = `<div>
-    <p class="caps C4C__share__eyebrow">But what can I do about it?</p>
-      <h2>Share Captcha for Congress</h2>
-      <p>Help keep reproductive rights at the top of everyone's mind on the Internet.</p>
+      <h2 class="C4C__share__line">Sign the #BansOffMyBody Petition</h2>
+      <p style="margin-bottom: 20px;">Stand with Planned Parenthood to protect our access to safe, legal abortion.</p>
       <div>
-        <a class="C4C__share__button" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcaptchaforcongress.com&text=Bots%20don%27t%20belong%20on%20the%20Internet.%20Congress%20doesn%27t%20belong%20between%20our%20legs.%20Get%20Captcha%20for%20Congress%20and%20show%20your%20support%20for%20reproductive%20rights!" target="_blank">${twitter}</a>
-        <a class="C4C__share__button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcaptchaforcongress.com" target="_blank">${facebook}</a>
+        <a class="C4C__share__button" href="https://www.weareplannedparenthood.org/onlineactions/Mi1qMaJDmESWf8HLRxCZOg2" target="_blank">Sign Now</a>
       </div>
     </div>`;
   modalStepTwo.appendChild(share);
