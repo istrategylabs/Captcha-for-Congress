@@ -3,16 +3,14 @@
  */
 export default [
   {
-    name: "Rand Paul",
+    name: "Brett Kavanaugh",
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Rand_Paul%2C_official_portrait%2C_112th_Congress.jpg/946px-Rand_Paul%2C_official_portrait%2C_112th_Congress.jpg",
-    belief:
-      "thinks most abortions should be illegal, even in cases of rape, incest."
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Associate_Justice_Brett_Kavanaugh_Official_Portrait.jpg/256px-Associate_Justice_Brett_Kavanaugh_Official_Portrait.jpg"
   },
   {
-    name: "Lindsey Graham",
+    name: "John Roberts",
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Lindsey_Graham%2C_Official_Portrait_2006.jpg/946px-Lindsey_Graham%2C_Official_Portrait_2006.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Official_roberts_CJ.jpg/256px-Official_roberts_CJ.jpg"
   },
   {
     name: "Ted Cruz",
@@ -20,9 +18,9 @@ export default [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Ted_Cruz%2C_official_portrait%2C_113th_Congress.jpg/960px-Ted_Cruz%2C_official_portrait%2C_113th_Congress.jpg"
   },
   {
-    name: "Jason Chaffetz",
+    name: "Clarence Thomas",
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Jason_Chaffetz%2C_official_portrait%2C_111th_Congress.jpg/360px-Jason_Chaffetz%2C_official_portrait%2C_111th_Congress.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Clarence_Thomas_official_SCOTUS_portrait.jpg/256px-Clarence_Thomas_official_SCOTUS_portrait.jpg"
   },
   {
     name: "Donald Trump",
@@ -40,13 +38,13 @@ export default [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Mitch_McConnell_official_portrait_112th_Congress.jpg/946px-Mitch_McConnell_official_portrait_112th_Congress.jpg"
   },
   {
-    name: "Louie Gohmert",
+    name: "Neil Gorsuch",
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Louie_Gohmert_official_photo_2.jpg/800px-Louie_Gohmert_official_photo_2.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Associate_Justice_Neil_Gorsuch_Official_Portrait.jpg/256px-Associate_Justice_Neil_Gorsuch_Official_Portrait.jpg"
   },
   {
-    name: "Devin Nunes",
+    name: "Samuel Alito",
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Devin_Nunes.jpg/384px-Devin_Nunes.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Samuel_Alito_official_photo.jpg/256px-Samuel_Alito_official_photo.jpg"
   }
 ];

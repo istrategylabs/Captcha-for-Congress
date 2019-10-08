@@ -167,10 +167,12 @@ function verifySelected(numSelected) {
   const body = document.createElement("div");
   body.classList.add("C4C__modalStepTwo__body");
   if (numSelected < 9) {
-    const who = Array.from(document.querySelectorAll("[data-captcha-img]"))
-      .filter(el => !el.parentNode.classList.contains("active"))[0]
-      .getAttribute("alt");
-    const belief = "abortion should be illegal in all cases after 6 weeks";
+    const whoRemains = Array.from(
+      document.querySelectorAll("[data-captcha-img]")
+    ).filter(el => !el.parentNode.classList.contains("active"));
+    const who = whoRemains[
+      Math.floor(Math.random() * whoRemains.length)
+    ].getAttribute("alt");
     body.innerHTML = `<h2>Hold up there...</h2>
       <p><small>Do you really want ${who} in the driver's seat of your uterus?</small></p>`;
   } else {
